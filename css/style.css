@@ -1,0 +1,122 @@
+body{
+	margin: 0;
+	background-image:url("bg1.jpg");
+	width: 100%;
+	height: 100%;
+	font-family: Arial, sans-serif;
+	font-size: 1em;
+}
+
+#wrapper{
+	padding: 2%;
+	width: 90%;
+	margin: 0 auto;
+}
+
+/* Menu */
+#menu {
+	border: 1px black solid;
+	font-size: 1.3em;
+	width: 100%;
+}
+
+#nav {
+	font-family: "Courier New", monospace;
+}
+
+#nav li {
+	display: inline;
+	padding: 0 1%;
+}
+
+#nav a:link, a:visited {
+	text-decoration: none;
+	color: black;
+}
+#nav a:hover {
+	text-decoration: none;
+	color: #999;
+}
+#nav a:active {
+	text-decoration: none
+}
+/* ---------- */
+
+/* Conteudo */
+#content {
+	width: 100%;
+/*	overflow: auto;*/
+}
+
+#content .col {
+	float: left;
+	width: 40%;
+	border: 1px black solid;
+	padding: 2%;
+	margin-top: 2%;
+	margin-left: 3%;
+}
+
+#content .col-un {
+	border: 1px black solid;
+	margin-top: 2%;
+	padding-bottom: 2%;
+}
+
+.no-float {
+	float: none;
+}
+
+#hide_m, #hide_d, #hide_excluir {
+	display: none;
+}
+/* ---------- */
+
+/* Tabela */
+.tabela {
+	width: 95%;
+	margin: 2%; 
+	border-collapse: collapse;
+	border: 1px black solid;	
+	background: white;
+}
+
+.tabela th {
+	height: 3em;
+	background-color: #EAF2D3;
+}
+
+.tabela th,td {
+	padding: 0.3%;
+	border: 1px black solid;
+}
+
+.tabela th:last-child {
+	width: 15%;
+}
+
+.tabela td:last-child {
+	text-align: center;
+}
+
+.tabela a:link, a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+.tabela a:hover {
+	text-decoration: none;
+	color: red;
+}
+
+.tabela a:active {
+	text-decoration: none
+}
+/* ---------- */
+
+/* Botoes */
+
+#botao {
+	padding: 0.5%;
+	margin-left: 2%; 
+}
