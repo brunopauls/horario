@@ -46,13 +46,6 @@
 					ligula suscipit. Nunc id enim risus. Sed sed ligula odio. Fusce ut nisl orci. Ut a quam nisl, et mollis est. 
 					Pellentesque eget nunc in est euismod ultricies.<br>
 
-					Praesent sodales, magna in consequat facilisis, velit turpis placerat nibh, ac elementum diam nisl vitae diam. 
-					Maecenas venenatis molestie diam in dictum. Cras non odio nisl, non pharetra odio. Nulla nibh dolor, feugiat et 
-					mattis sed, interdum non quam. Nam cursus ipsum ultricies enim tincidunt rutrum. Nunc porttitor malesuada nisi, ut 
-					egestas felis tempus a. Praesent ultrices magna eu libero luctus commodo. Vivamus sit amet lorem a ligula molestie 
-					viverra. Sed molestie erat non massa volutpat commodo. Quisque faucibus dignissim diam, dapibus vulputate nisl 
-					suscipit vitae. Donec cursus molestie ante a mollis.<br>
-
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet justo molestie mi auctor pulvinar. 
 					In ullamcorper adipiscing mollis. Vestibulum rhoncus consectetur sapien, in convallis purus adipiscing non. 
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget enim ac quam ultricies lobortis. 
