@@ -4,7 +4,7 @@
 
 /* Overlay */
 #confirm-overlay {
-	background-color:#eee; 
+	background-color:#fff; 
 /*	cursor:wait;*/
 }
 
@@ -15,7 +15,7 @@
 	font: 1.3em 'Trebuchet MS', Verdana, Arial; 
 	text-align:left; 
 	background:#fff; 
-	border:2px solid #336699;
+	border:2px solid #6f6f6f;
 
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
@@ -27,7 +27,7 @@
 	height:30px; 
 	line-height:30px; 
 	width:100%; 
-	background:url(header.gif) repeat-x; 
+	background:url(header2.gif) repeat-x; 
 	color:#fff; 
 	font-weight:bold;
 }
@@ -59,7 +59,7 @@
 	font-weight:bold; 
 	text-align:center; 
 	background:url(button.gif) repeat-x; 
-	border:1px solid #bbb; 
+	border:1px solid #6f6f6f; 
 	cursor:pointer;
 } 
 
