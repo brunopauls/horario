@@ -89,9 +89,7 @@
 		</div>
 	</div>
 </body>
-
-
 <?
-msql_close($con);
+	msql_close($con);
 ?>
 </html>
