@@ -42,11 +42,7 @@ function stringMateria(){
 
 //Ve qual foi o excluir(professor/materia/turmas/etc) chamado
 jQuery(function (e) {
-<<<<<<< HEAD
-	$('#confirm-dialog a.materia').click(function (e) {
-=======
     $('#confirm-dialog a.materia').click(function (e) {
->>>>>>> ee06ff00648d13a865813e6457327a7a055ba223
 		e.preventDefault();
 		confirm("Tem certeza que deseja excluir?", function () {
 			window.location.href = "delete_mat.php";
