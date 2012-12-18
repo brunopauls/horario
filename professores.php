@@ -46,7 +46,6 @@
 							echo '<td>' . $row['Dias'] . '</td>';
 							echo '<td><a href="#">Editar</a> | <a href="#" class="confirm professor">Excluir</a></td>';
 							echo "</tr>";
-							
 						}
 
 						echo '</table>';
@@ -87,7 +86,7 @@
 			</div>
 		</div>
 	</body>
-<?
-	msql_close($con);
-?>
+	<?
+		msql_close($con);
+	?>
 </html>

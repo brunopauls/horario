@@ -40,7 +40,6 @@
 							echo '<td>' . $row['Nome'] . '</td>';
 							echo '<td><a href="#">Editar</a> | <a href="#" class="confirm materia">Excluir</a></td>';
 							echo "</tr>";
-							
 						}
 
 						echo '</table>';
@@ -64,7 +63,8 @@
 			</div>
 		</div>
 	</body>
-<?php
-	msql_close($con);
-?>
+	<?php
+		msql_close($con);
+	?>
 </html>
+

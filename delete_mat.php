@@ -7,7 +7,7 @@
 			//Abre a conexão
 			$con = require_once "config.php";
 
-			//Deleta a tabela Professores inteira (Esvaziar Tabela não quer funcionar)
+			//Deleta a tabela Professores inteira
 			mysql_query("DROP TABLE Materias");
 
 			//Recria a Tabela
@@ -23,7 +23,7 @@
 			else {
 				echo "Error creating table: " . mysql_error();
 			}
-			
+
 			//Fecha a conexão
 			mysql_close($con);
 		?>

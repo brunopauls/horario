@@ -7,7 +7,7 @@
 			//Abre a conexão
 			$con = require_once "config.php";
 
-			//Deleta a tabela Professores inteira (Esvaziar Tabela não quer funcionar)
+			//Deleta a tabela Professores inteira
 			mysql_query("DROP TABLE Professores");
 
 			//Recria a Tabela

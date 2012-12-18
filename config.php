@@ -1,5 +1,4 @@
 <?php
-
 	//Para conectar ao banco de dados
 	$bdhost      = "localhost";
 	$bdusuario   = "root";
@@ -12,7 +11,6 @@
 		echo 'Erro ao selecionar a base de dados';
 	else 
 		return $con;
-
 ?>
 
 <?php

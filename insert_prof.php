@@ -4,6 +4,7 @@
 	</head>
 	<body>
 		<?php
+			//Abre a conexão
 			$con = require_once "config.php";
 
 			$sql="INSERT INTO Professores (Nome, Sobrenome, Materias, Dias)
@@ -15,6 +16,7 @@
 				die('Error: ' . mysql_error());
 			}
 			
+			//Fecha a conexão
 			mysql_close($con);
 		?>
 	</body>
