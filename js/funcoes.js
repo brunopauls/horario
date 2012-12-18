@@ -1,3 +1,4 @@
+//Cria a string dos dias
 function stringDia(){
     var semana = document.getElementsByName("semana");
     var trampa=null;
@@ -18,8 +19,7 @@ function stringDia(){
     document.getElementById("hide_d").value = trampa;
 }
 
-
-
+//Cria a string dos dias
 function stringMateria(){
     var materia = document.getElementsByName("materia");
     var trampa=null;
@@ -40,20 +40,27 @@ function stringMateria(){
     document.getElementById("hide_m").value = trampa;
 }
 
-jQuery(function ($) {
-    $('#confirm-dialog input.confirm, #confirm-dialog a.confirm').click(function (e) {
-        e.preventDefault();
-
-        // example of calling the confirm function
-        // you must use a callback function to perform the "yes" action
-        confirm("Tem certeza que deseja excluir?", function () {
-            window.location.href = "delete_prof.php";
-        });
-    });
+//Ve qual foi o excluir(professor/materia/turmas/etc) chamado
+jQuery(function (e) {
+    $('#confirm-dialog a.materia').click(function (e) {
+		e.preventDefault();
+		confirm("Tem certeza que deseja excluir?", function () {
+			window.location.href = "delete_mat.php";
+		});
+	});
+    $('#confirm-dialog a.professor').click(function (e) {
+		e.preventDefault();
+		confirm("Tem certeza que deseja excluir?", function () {
+			window.location.href = "delete_prof.php";
+		});
+	});
 });
 
+//Faz aparecer a mensagem de confirmação
 function confirm(message, callback) {
     $("#confirm").modal({
+    	escClose: true,
+    	opacity: 35,
         closeHTML: "<a href='#' title='Close' class='modal-close'>x</a>",
         position: ["20%",],
         overlayId: "confirm-overlay",
@@ -76,6 +83,7 @@ function confirm(message, callback) {
     });
 }
 
+//Faz aparecer o formulario de adicionar algo
 jQuery(function ($) {
     $(".basic").click(function () {
         $("#basic-modal-content").modal({
