@@ -1,5 +1,4 @@
 <!doctype html>
-<?php include_once("config.php"); ?>
 <html>
 	<head>
 		<title>Horario Escolar</title>
@@ -24,7 +23,6 @@
 			</div>
 			<div id="content">
 				<div class="col-un">
-
 					<!-- Imprime a tabela das materias existentes -->
 					<?php
 						$con = require_once "config.php";
@@ -48,14 +46,12 @@
 						echo '</table>';
 						echo '<button id="botao" class="basic">Adicionar nova materia!</button>';
 					?>
-
 					<!-- Tabela das materias -->
 					<form id="basic-modal-content" name="myForm" action="insert_mat.php" method="post">
 						<label for="nome">Nome</label><br>
 						<input type="text" id="nome" name="nome"><br><br>
 						<input type="submit" id="botaoForm" value="Adicionar">
 					</form>
-
 					<!-- Mensagem de confirmação de exclusão -->
 					<div id="confirm">
                         <div class="header"><span>Confirmar</span></div>
@@ -64,7 +60,6 @@
                             <div class="no simplemodal-close">Nao</div><div class="yes">Sim</div>
                         </div>
                     </div>
-
 				</div>
 			</div>
 		</div>

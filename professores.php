@@ -1,5 +1,4 @@
 <!doctype html>
-<?php include_once("config.php"); ?>
 <html>
 	<head>
 		<title>Horario Escolar</title>
@@ -66,7 +65,7 @@
 						<input type="checkbox" id="qui" name="semana" value="4" onclick="stringDia()"><label for="qui">Quinta</label><br>
 						<input type="checkbox" id="sex" name="semana" value="5" onclick="stringDia()"><label for="sex">Sexta</label><br>
 						<br>Materias:<br>
-						<?
+						<?php
 							$result = mysql_query("SELECT * FROM Materias");
 							while($row = mysql_fetch_array($result)){
 								echo '<input type="checkbox" id="' . $row['Nome'] . '" name="materia" value="' . $row['Nome'] . '" onclick="stringMateria()"><label for="' . $row['Nome'] . '">' . $row['Nome'] . '</label><br>';				
@@ -76,22 +75,19 @@
 						<input type="text" id="hide_d" name="dias" value=""><br>
 						<input type="submit" id="botaoForm" value="Adicionar">
 					</form>		                    
-				</div>
 					<!-- Mensagem de confirmação de exclusão -->
-				<div id="confirm">
-                    <div class="header"><span>Confirmar</span></div>
-                    <div class="message"></div>
-                    <div class="buttons">
-                        <div class="no simplemodal-close">Nao</div><div class="yes">Sim</div>
-                    </div>
-                </div>
+					<div id="confirm">
+	                    <div class="header"><span>Confirmar</span></div>
+	                    <div class="message"></div>
+	                    <div class="buttons">
+	                        <div class="no simplemodal-close">Nao</div><div class="yes">Sim</div>
+	                    </div>
+	                </div>
+				</div>
 			</div>
 		</div>
-	</div>
-</body>
-
-
+	</body>
 <?
-msql_close($con);
+	msql_close($con);
 ?>
 </html>

@@ -1,6 +1,6 @@
 <?php
-	//Para conectar ao banco de dados
 
+	//Para conectar ao banco de dados
 	$bdhost      = "localhost";
 	$bdusuario   = "root";
 	$bdsenha     = "q1w2e3r4";
@@ -14,7 +14,6 @@
 		return $con;
 
 ?>
-
 
 <?php
 	//Usado para criar o banco de dados inicial

@@ -23,10 +23,9 @@
 			else {
 				echo "Error creating table: " . mysql_error();
 			}
-
+			
 			//Fecha a conexão
 			mysql_close($con);
 		?>
 	</body>
 </html>
-

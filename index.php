@@ -1,5 +1,4 @@
 <!doctype html>
-<?php include_once("config.php"); ?>
 <html>
 	<head>
 		<title>Horario Escolar</title>
@@ -63,12 +62,6 @@
 					auctor, dui justo faucibus nulla, non viverra arcu enim ut lorem. Proin rhoncus nibh at mauris pharetra et laoreet 
 					ligula suscipit. Nunc id enim risus. Sed sed ligula odio. Fusce ut nisl orci. Ut a quam nisl, et mollis est. 
 					Pellentesque eget nunc in est euismod ultricies.<br>
-
-					Praesent sodales, magna in consequat facilisis, velit turpis placerat nibh, ac elementum diam nisl vitae diam. 
-					Maecenas venenatis molestie diam in dictum. Cras non odio nisl, non pharetra odio. Nulla nibh dolor, feugiat et 
-					mattis sed, interdum non quam. Nam cursus ipsum ultricies enim tincidunt rutrum. Nunc porttitor malesuada nisi, ut 
-					egestas felis tempus a. Praesent ultrices magna eu libero luctus commodo. Vivamus sit amet lorem a ligula molestie 
-					viverra. Sed molestie erat non massa volutpat commodo.
 				</div>
 			</div>
 		</div>
