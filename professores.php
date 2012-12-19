@@ -55,7 +55,7 @@
 							echo '<td>' . $row['Sobrenome'] . '</td>';
 							echo '<td>' . $row['Materias'] . '</td>';
 							echo '<td>' . $row['Dias'] . '</td>';
-							echo '<td><a href="#">Editar</a> | <form action="delete_line_prof.php" method="post"> <input type="submit" id="botaozinho" class="confirm professor" value="Excluir"> <input type="text" id="hide_m" name="nome" value="' . $row['Nome'] . '"><br><input type="text" id="hide_m" name="sobrenome" value="' . $row['Sobrenome'] . '"><br></form> </td>';
+							echo '<td><a href="#">Editar</a> | <form action="delete_line_prof.php" method="post"> <input type="submit" id="botaozinho" class="confirm professor" value="Excluir"> <input type="text" id="hide_excluir" name="nome" value="' . $row['Nome'] . '"><br><input type="text" id="hide_excluir" name="sobrenome" value="' . $row['Sobrenome'] . '"><br></form> </td>';
 							echo "</tr>";
 						}
 

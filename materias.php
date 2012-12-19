@@ -38,7 +38,7 @@
 						while($row = mysql_fetch_array($result)){
 							echo '<tr>';
 							echo '<td>' . $row['Nome'] . '</td>';
-							echo '<td><a href="#">Editar</a> | <form action="delete_line_mat.php" method="post"> <input type="submit" id="botaozinho" class="confirm professor" value="Excluir"> <input type="text" id="hide_m" name="nome" value="' . $row['Nome'] . '"><br></form> </td>';
+							echo '<td><a href="#">Editar</a> | <form action="delete_line_mat.php" method="post"> <input type="submit" id="botaozinho" class="confirm professor" value="Excluir"> <input type="text" id="hide_excluir" name="nome" value="' . $row['Nome'] . '"><br></form> </td>';
 
 							echo "</tr>";
 						}
