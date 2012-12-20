@@ -45,13 +45,13 @@ jQuery(function (e) {
     $('#confirm-dialog a.materia').click(function (e) {
 		e.preventDefault();
 		confirm("Tem certeza que deseja excluir?", function () {
-			window.location.href = "delete_mat.php";
+			window.location.href = $('#confirm-dialog a.materia').attr('href');
 		});
 	});
     $('#confirm-dialog a.professor').click(function (e) {
 		e.preventDefault();
 		confirm("Tem certeza que deseja excluir?", function () {
-			window.location.href = "delete_prof.php";
+			window.location.href = $('#confirm-dialog a.professor').attr('href');
 		});
 	});
 });

@@ -7,7 +7,7 @@
 			//Abre a conexão
 			$con = require_once "config.php";
 
-			if (!mysql_query("DELETE From Materias where Nome = '$_POST[nome]'")){
+			if (!mysql_query("DELETE From Materias where Nome = '$_GET[nome]'")){
 				echo "Error deleting line: " . mysql_error();
 			}
 
