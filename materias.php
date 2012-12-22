@@ -38,14 +38,14 @@
 						while($row = mysql_fetch_array($result)){
 							echo '<tr>';
 							echo '<td>' . $row['Nome'] . '</td>';
-							echo '<td><a href="#">Editar</a> | <a href="delete_line_mat.php?nome=' . $row['Nome'] .'" class="confirm professor">Excluir</a></td>';
+							echo '<td><a href="#" onclick="editMat(\''. $row['Nome'] . '\')">Editar</a> | <a href="#" onclick="msgConfirmMat(\''. $row['Nome'] . '\')">Excluir</a></td>';
 							echo "</tr>";
 						}
 
 						echo '</table>';
-						echo '<button id="botao" class="basic">Adicionar nova materia!</button>';
+						echo '<button id="botao" onclick="adicionar()">Adicionar nova materia!</button>';
 					?>
-					<!-- Tabela das materias -->
+					<!-- Formulario p/ adicionar materia -->
 					<form id="basic-modal-content" name="myForm" action="insert_mat.php" method="post">
 						<label for="nome">Nome</label><br>
 						<input type="text" id="nome" name="nome"><br><br>

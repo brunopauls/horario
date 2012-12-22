@@ -44,15 +44,15 @@
 							echo '<td>' . $row['Sobrenome'] . '</td>';
 							echo '<td>' . $row['Materias'] . '</td>';
 							echo '<td>' . $row['Dias'] . '</td>';
-							echo '<td><a href="#">Editar</a> | <a href="delete_line_prof.php?nome=' . $row['Nome'] .'&sobrenome=' . $row['Sobrenome'] .'" class="confirm professor">Excluir</a></td>';
+							echo '<td><a href="#" onclick="editProf(\''. $row['Nome'] . '\', \''. $row['Sobrenome'] .'\')">Editar</a> | <a href="#" onclick="msgConfirmProf(\''. $row['Nome'] . '\', \''. $row['Sobrenome'] .'\')">Excluir</a></td>';
 							echo "</tr>";
 						}
 
 						echo '</table>';
-						echo '<button id="botao" class="basic">Adicionar novo professor!</button>';
+						echo '<button id="botao" onclick="adicionar()">Adicionar novo professor!</button>';
 				
 					?>
-					<!-- Tabela das materias -->
+					<!-- Formulario p/ adicionar professor -->
 					<form id="basic-modal-content" name="myForm" action="insert_prof.php" method="post">
 						<label for="nome">Nome</label><br>
 						<input type="text" id="nome" name="nome"><br><br>
@@ -63,6 +63,7 @@
 						<input type="checkbox" id="qua" name="semana" value="3" onclick="stringDia()"><label for="qua">Quarta</label><br>
 						<input type="checkbox" id="qui" name="semana" value="4" onclick="stringDia()"><label for="qui">Quinta</label><br>
 						<input type="checkbox" id="sex" name="semana" value="5" onclick="stringDia()"><label for="sex">Sexta</label><br>
+						<!-- Imprime lista de materias disponiveis -->
 						<br>Materias:<br>
 						<?php
 							$result = mysql_query("SELECT * FROM Materias");
@@ -73,7 +74,7 @@
 						<input type="text" id="hide_m" name="materias" value=""><br>
 						<input type="text" id="hide_d" name="dias" value=""><br>
 						<input type="submit" id="botaoForm" value="Adicionar">
-					</form>		                    
+					</form>
 					<!-- Mensagem de confirmação de exclusão -->
 					<div id="confirm">
 	                    <div class="header"><span>Confirmar</span></div>

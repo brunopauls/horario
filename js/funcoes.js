@@ -40,21 +40,17 @@ function stringMateria(){
     document.getElementById("hide_m").value = trampa;
 }
 
-//Ve qual foi o excluir(professor/materia/turmas/etc) chamado
-jQuery(function (e) {
-    $('#confirm-dialog a.materia').click(function (e) {
-		e.preventDefault();
-		confirm("Tem certeza que deseja excluir?", function () {
-			window.location.href = $('#confirm-dialog a.materia').attr('href');
-		});
+function msgConfirmProf(nome, sobrenome) {
+	confirm("Tem certeza que deseja excluir?", function () {
+			window.location.href = "delete_line_prof.php?nome="+nome+"&"+"sobrenome="+sobrenome;
 	});
-    $('#confirm-dialog a.professor').click(function (e) {
-		e.preventDefault();
-		confirm("Tem certeza que deseja excluir?", function () {
-			window.location.href = $('#confirm-dialog a.professor').attr('href');
-		});
+}
+
+function msgConfirmMat(nome) {
+	confirm("Tem certeza que deseja excluir?", function () {
+			window.location.href = "delete_line_mat.php?nome="+nome;
 	});
-});
+}
 
 //Faz aparecer a mensagem de confirmação
 function confirm(message, callback) {
@@ -83,12 +79,29 @@ function confirm(message, callback) {
     });
 }
 
-//Faz aparecer o formulario de adicionar algo
-jQuery(function ($) {
-    $(".basic").click(function () {
-        $("#basic-modal-content").modal({
-            escClose: true,
-            opacity: 85
-        });
+//Faz aparecer o formulario de adicionar
+function adicionar() {
+	$("#basic-modal-content").modal({
+        escClose: true,
+        opacity: 85
     });
-});
+}
+
+//Faz aparecer o formulario de editar professor
+function editProf(nome, sobrenome) {
+	$("#basic-modal-content #nome").attr('value', nome);
+	$("#basic-modal-content #sobrenome").attr('value', sobrenome);
+	$("#basic-modal-content").modal({
+        escClose: true,
+        opacity: 85
+    });
+}
+
+//Faz aparecer o formulario de editar materia
+function editMat(nome) {
+	$("#basic-modal-content #nome").attr('value', nome);
+	$("#basic-modal-content").modal({
+        escClose: true,
+        opacity: 85
+    });
+}

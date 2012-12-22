@@ -67,7 +67,7 @@ body{
 	float: none;
 }
 
-#hide_m, #hide_d, #hide_excluir {
+#hide_m, #hide_d {
 	display: none;
 }
 /* ---------- */
