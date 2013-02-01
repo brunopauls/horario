@@ -43,7 +43,7 @@
 						}
 
 						echo '</table>';
-						echo '<button id="botao" onclick="adicionar()">Adicionar novo professor!</button>';
+						echo '<button id="botao" onclick="adicionar()">Adicionar novo professor</button>';
 				
 					?>
 					<!-- Formulario p/ adicionar professor -->

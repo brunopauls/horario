@@ -27,20 +27,20 @@
 							<th>Opcoes</th>
 						</tr>';
 						
-						$result = mysql_query("SELECT * FROM Materias");
+						$result = mysql_query("SELECT * FROM Turmas");
 
 						while($row = mysql_fetch_array($result)){
 							echo '<tr>';
 							echo '<td>' . $row['Nome'] . '</td>';
-							echo '<td><a href="#" onclick="editMat(\''. $row['Nome'] . '\')">Editar</a> | <a href="#" onclick="msgConfirmMat(\''. $row['Nome'] . '\')">Excluir</a></td>';
+							echo '<td><a href="#" onclick="editMat(\''. $row['Nome'] . '\')">Editar</a> | <a href="#" onclick="msgConfirmTrm(\''. $row['Nome'] . '\')">Excluir</a></td>';
 							echo "</tr>";
 						}
 
 						echo '</table>';
-						echo '<button id="botao" onclick="adicionar()">Adicionar nova materia!</button>';
+						echo '<button id="botao" onclick="adicionar()">Adicionar nova turma</button>';
 					?>
 					<!-- Formulario p/ adicionar materia -->
-					<form id="basic-modal-content" name="myForm" action="insert_mat.php" method="post">
+					<form id="basic-modal-content" name="myForm" action="insert_trm.php" method="post">
 						<label for="nome">Nome</label><br>
 						<input type="text" id="nome" name="nome"><br><br>
 						<input type="submit" id="botaoForm" value="Adicionar">

@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<meta http-equiv="refresh" content="0.0001; URL=materias.php">
+		<meta http-equiv="refresh" content="10; URL=materias.php">
 	</head>
 	<body>
 		<?php
@@ -16,6 +16,16 @@
 			  die('Error: ' . mysql_error());
 			}
 			
+			//Insere Nova coluna na Tabela TURMAS, 
+
+			$sql="ALTER TABLE Turmas ADD " . "$_POST[nome]" . " varchar(30) ";
+			
+			echo "$_POST[nome]";
+			
+			if (!mysql_query($sql,$con)){
+			  die('Error: ' . mysql_error());
+			}
+
 			//Fecha a conexão
 			mysql_close($con);
 		?>

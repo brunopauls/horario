@@ -37,7 +37,7 @@
 						}
 
 						echo '</table>';
-						echo '<button id="botao" onclick="adicionar()">Adicionar nova materia!</button>';
+						echo '<button id="botao" onclick="adicionar()">Adicionar nova materia</button>';
 					?>
 					<!-- Formulario p/ adicionar materia -->
 					<form id="basic-modal-content" name="myForm" action="insert_mat.php" method="post">

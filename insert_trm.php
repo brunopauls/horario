@@ -1,13 +1,13 @@
 <html>
 	<head>
-		<meta http-equiv="refresh" content="0.0001; URL=materias.php">
+		<meta http-equiv="refresh" content="0.0001; URL=turmas.php">
 	</head>
 	<body>
 		<?php
 			//Abre a conexão
 			$con = require_once "config.php";
 
-			$sql="INSERT INTO Materias (Nome)
+			$sql="INSERT INTO Turmas (Nome)
 			VALUES ('$_POST[nome]')";
 			
 			echo "$_POST[nome]";

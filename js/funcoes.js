@@ -52,6 +52,12 @@ function msgConfirmMat(nome) {
 	});
 }
 
+function msgConfirmTrm(nome) {
+    confirm("Tem certeza que deseja excluir?", function () {
+            window.location.href = "delete_line_trm.php?nome="+nome;
+    });
+}
+
 //Faz aparecer a mensagem de confirmação
 function confirm(message, callback) {
     $("#confirm").modal({
