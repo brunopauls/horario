@@ -7,15 +7,9 @@
 	<body >
 		<div id="wrapper">
 			<div id="header"></div>
-			<div id="menu">
-				<ul id="nav">
-					<a href="index.php"><li>Home</li></a>
-					<a href="professores.php"><li>Professores</li></a>
-			<!--		<a href="turmas.html"><li>Turmas</li></a>-->
-					<a href="materias.php"><li>Materias</li></a>
-			<!--		<a href="horarios.html"><li>Horario</li></a>-->
-				</ul>
-			</div>
+			<?php
+				$con = require_once "menu.php";
+			?>
 			<div id="content">
 				<div class="col">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet justo molestie mi auctor pulvinar. 

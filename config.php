@@ -1,7 +1,7 @@
 <?php
 	//Para conectar ao banco de dados
 	$bdhost      = "localhost";
-	$bdusuario   = "root";
+	$bdusuario   = "horario";
 	$bdsenha     = "q1w2e3r4";
 	$basededados = "my_db";
 
