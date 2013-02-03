@@ -2,13 +2,18 @@
 <html>
 	<head>
 		<title>Horario Escolar</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css" media='screen'>
+		<link rel="stylesheet" type='text/css' href='css/confirm.css' media='screen'>
+		<link rel="stylesheet" type='text/css' href='css/bootstrap.css' media='screen'>
+		<link rel="stylesheet" type='text/css' href='css/style.css' media='screen'>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/funcoes.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
 	</head>
 	<body >
 		<div id="wrapper">
 			<div id="header"></div>
 			<?php
-				$con = require_once "menu.php";
+				require_once "menu.php";
 			?>
 			<div id="content">
 				<div class="col">
@@ -27,7 +32,7 @@
 					mattis sed, interdum non quam. Nam cursus ipsum ultricies enim tincidunt rutrum. Nunc porttitor malesuada nisi, ut 
 					egestas felis tempus a. Praesent ultrices magna eu libero luctus commodo. Vivamus sit amet lorem a ligula molestie 
 					viverra. Sed molestie erat non massa volutpat commodo. Quisque faucibus dignissim diam, dapibus vulputate nisl 
-					suscipit vitae. Donec cursus molestie ante a mollis.
+					suscipit vitae.
 				</div>
 				<div class="col">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet justo molestie mi auctor pulvinar. 

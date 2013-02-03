@@ -1,113 +1,135 @@
-//Cria a string dos dias
-function stringDia(){
-    var semana = document.getElementsByName("semana");
-    var trampa=null;
+// Cria a string dos dias
+function stringMake(tipo){
+    var vetor;
+    if (tipo == "dias") {
+        vetor = document.getElementsByName("semana");
+        finalStrig = document.getElementById("hide_d");
+    } else if (tipo == "materia") {
+        vetor = document.getElementsByName("materia");
+        finalStrig = document.getElementById("hide_m");
+    }
+    var string=null;
     var first = true;
-    for (var i=0; i < semana.length; i++){  
-        if (semana[i].checked){
+    for (var i=0; i < vetor.length; i++){  
+        if (vetor[i].checked){
             if (first) {
-                trampa = semana[i].value;
+                string = vetor[i].value;
                 first = false;
             } else {
-                trampa = trampa + "," + semana[i].value;
+                string = string + "," + vetor[i].value;
             }
         }
-        if (trampa == null) {
-            trampa = "";
+        if (string == null) {
+            string = "";
         }
     }
-    document.getElementById("hide_d").value = trampa;
+    finalStrig.value = string;
 }
 
-//Cria a string dos dias
-function stringMateria(){
-    var materia = document.getElementsByName("materia");
-    var trampa=null;
-    var first = true;
-    for (var i=0; i < materia.length; i++){  
-        if (materia[i].checked){
-            if (first) {
-                trampa = materia[i].value;
-                first = false;
-            } else {
-                trampa = trampa + "," + materia[i].value;
+// Faz aparecer a mensagem de exclusão e direciona pra página correta
+function msgConfirm(tipo, id) {
+    $('#msgConfirm').modal('show');
+    var temp = '#'+id;
+    temp = $(temp+' td');
+    $('#msgConfirm').on('shown', function () {
+        $('#bot-yes').on('click', function () {
+            if (tipo == "prof") {
+                // Pega os dados para a exclusão
+                var temp = '#'+id;
+                temp = $(temp+' td');
+                var nome = temp[1].innerHTML;
+                var sobrenome = temp[2].innerHTML;
+                // Vai pra pagina de exclusão
+                window.location.href = "delete_line_prof.php?nome="+nome+"&"+"sobrenome="+sobrenome;
+            } else if (tipo == "mat") {
+                var temp = '#'+id;
+                temp = $(temp+' td');
+                var nome = temp[1].innerHTML;
+                window.location.href = "delete_line_mat.php?nome="+nome;
+            } else if (tipo == "turma") {
+                var temp = '#'+id;
+                temp = $(temp+' td');
+                var nome = temp[1].innerHTML;
+                window.location.href = "delete_line_trm.php?nome="+nome;
             }
-        }
-        if (trampa == null) {
-            trampa = "";
-        }
-    }
-    document.getElementById("hide_m").value = trampa;
-}
-
-function msgConfirmProf(nome, sobrenome) {
-	confirm("Tem certeza que deseja excluir?", function () {
-			window.location.href = "delete_line_prof.php?nome="+nome+"&"+"sobrenome="+sobrenome;
-	});
-}
-
-function msgConfirmMat(nome) {
-	confirm("Tem certeza que deseja excluir?", function () {
-			window.location.href = "delete_line_mat.php?nome="+nome;
-	});
-}
-
-function msgConfirmTrm(nome) {
-    confirm("Tem certeza que deseja excluir?", function () {
-            window.location.href = "delete_line_trm.php?nome="+nome;
+        });
     });
 }
 
-//Faz aparecer a mensagem de confirmação
-function confirm(message, callback) {
-    $("#confirm").modal({
-    	escClose: true,
-    	opacity: 35,
-        closeHTML: "<a href='#' title='Close' class='modal-close'>x</a>",
-        position: ["20%",],
-        overlayId: "confirm-overlay",
-        containerId: "confirm-container", 
-        onShow: function (dialog) {
-            var modal = this;
-
-            $(".message", dialog.data[0]).append(message);
-
-            // if the user clicks "yes"
-            $(".yes", dialog.data[0]).click(function () {
-                // call the callback
-                if ($.isFunction(callback)) {
-                    callback.apply();
+// Faz aparecer o formulario
+function appearWindow(tipo, whosend, id) {
+    if(tipo == "add") {
+        $('#formAdd').modal('show');
+    } else if (tipo == "edit") {
+        if (whosend == "prof") {
+            // Pega o id/codigo p/ alterar as coisas depois
+            var temp = '#'+id;
+            temp = $(temp+' td');
+            // Seta o nome
+            var nome = temp[1].innerHTML;
+            $('#formAdd input[name=nome]').attr('value', nome);
+            // Seta o sobrenome
+            var sobrenome = temp[2].innerHTML;
+            $('#formAdd input[name=sobrenome]').attr('value', sobrenome);
+            // Da o check das materias
+            var j = 0;
+            $('input:text#hide_m').attr('value', temp[3].innerHTML);
+            var materias = temp[3].innerHTML.split(',');
+            var vetorMat = $('input[name=materia]:checkbox');
+            for (var i = 0; i < vetorMat.length; i++) {
+                console.log(vetorMat[i], i);
+                console.log(vetorMat[i].value+'=='+materias[j]);
+                if(vetorMat[i].value == materias[j]){
+                    vetorMat[i].checked = true;
+                    j++;
                 }
-                // close the dialog
-                modal.close(); // or $.modal.close();
-            });
+            };
+            // Da o check dos dias
+            $('input:text#hide_d').attr('value', temp[4].innerHTML);
+            var dias = temp[4].innerHTML.split(',');
+            var vetorDia = $('input[name=semana]:checkbox');
+            for (var i = 0; i < vetorDia.length; i++) {
+                if (dias.indexOf((i+1).toString()) >= 0) {
+                    vetorDia[i].checked=true;
+                }
+            };
+        } else if (whosend == "mat") {
+            // Pega o id/codigo p/ alterar as coisas depois
+            var temp = '#'+id;
+            temp = $(temp+' td');
+            // Seta o nome
+            var nome = temp[1].innerHTML;
+            $('#formAdd input[name=nome]').attr('value', nome);
+        } else if (whosend == "turma") {
+            // Pega o id/codigo p/ alterar as coisas depois
+            var temp = '#'+id;
+            temp = $(temp+' td');
+            // Seta o nome
+            var nome = temp[1].innerHTML;
+            $('#formAdd input[name=nome]').attr('value', nome);
         }
-    });
-}
-
-//Faz aparecer o formulario de adicionar
-function adicionar() {
-	$("#basic-modal-content").modal({
-        escClose: true,
-        opacity: 85
-    });
-}
-
-//Faz aparecer o formulario de editar professor
-function editProf(nome, sobrenome) {
-	$("#basic-modal-content #nome").attr('value', nome);
-	$("#basic-modal-content #sobrenome").attr('value', sobrenome);
-	$("#basic-modal-content").modal({
-        escClose: true,
-        opacity: 85
-    });
-}
-
-//Faz aparecer o formulario de editar materia
-function editMat(nome) {
-	$("#basic-modal-content #nome").attr('value', nome);
-	$("#basic-modal-content").modal({
-        escClose: true,
-        opacity: 85
+        // Aqui chama o php pra editar
+        $('#formAdd').modal('show');
+        $('#formAdd').on('shown', function () {
+            $('.btn btn-primary').on('click', function () {
+                if (whosend == "prof") {
+                    console.log("Professor tentou editar!")
+                } else if (whosend == "mat") {
+                    console.log("Materia tentou editar!")
+                } else if (whosend == "turma") {
+                    console.log("Turma tentou editar!")
+                }
+            });
+        });
+    }
+    // Apos sair limpa o modal!
+    $('#formAdd').on('hidden', function () {
+        $('#formAdd input:text').attr('value', "");
+        var vetor = $('input:checkbox');
+        for (var i = 0; i < vetor.length; i++) {
+            if (vetor[i].checked) {
+                vetor[i].checked=false;
+            }
+        };
     });
 }

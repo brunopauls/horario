@@ -2,18 +2,18 @@
 <html>
 	<head>
 		<title>Horario Escolar</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css" media='screen'>
-		<link rel="stylesheet" type='text/css' href='css/basic.css' media='screen'>
 		<link rel="stylesheet" type='text/css' href='css/confirm.css' media='screen'>
+		<link rel="stylesheet" type='text/css' href='css/bootstrap.css' media='screen'>
+		<link rel="stylesheet" type='text/css' href='css/style.css' media='screen'>
 		<script type="text/javascript" src="js/jquery.js"></script>
-		<script type='text/javascript' src='js/jquery.simplemodal.js'></script>
 		<script type="text/javascript" src="js/funcoes.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
 	</head>
 	<body >
 		<div id="wrapper">
 			<div id="header"></div>
 			<?php
-				$con = require_once "menu.php";
+				require_once "menu.php";
 			?>
 			<div id="content">
 				<div class="col-un">
@@ -21,38 +21,58 @@
 					<?php
 						$con = require_once "config.php";
 
-						echo '<table class="tabela" id="confirm-dialog">
+						echo '<table class="tabela">
 						<tr>
+							<th>#</th>
 							<th>Nome</th>
 							<th>Opcoes</th>
 						</tr>';
 						
 						$result = mysql_query("SELECT * FROM Materias");
-
+						$i = 0;
 						while($row = mysql_fetch_array($result)){
-							echo '<tr>';
+							echo '<tr id="codigo-' . $i . '">';
+							echo '<td>' . $i . '</td>';
 							echo '<td>' . $row['Nome'] . '</td>';
-							echo '<td><a href="#" onclick="editMat(\''. $row['Nome'] . '\')">Editar</a> | <a href="#" onclick="msgConfirmMat(\''. $row['Nome'] . '\')">Excluir</a></td>';
+							echo '<td><a href="#" onclick="appearWindow(\'edit\', \'mat\', \'codigo-'. $i .'\')">Editar</a> | <a href="#" onclick="msgConfirm(\'mat\', \'codigo-'. $i .'\')">Excluir</a></td>';
 							echo "</tr>";
+							$i++;
 						}
 
 						echo '</table>';
-						echo '<button id="botao" onclick="adicionar()">Adicionar nova materia</button>';
+						echo '<a onclick="appearWindow(\'add\', null, null)" role="button" class="btn">Adicionar nova materia!</a>';
 					?>
 					<!-- Formulario p/ adicionar materia -->
-					<form id="basic-modal-content" name="myForm" action="insert_mat.php" method="post">
-						<label for="nome">Nome</label><br>
-						<input type="text" id="nome" name="nome"><br><br>
-						<input type="submit" id="botaoForm" value="Adicionar">
+					<form name="myForm" action="insert_mat.php" method="post">
+						<div id="formAdd" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="formAdicionar" aria-hidden="true">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+								<h3 id="formAdicionar">Formulario</h3>
+							</div>
+						    <div class="modal-body">
+									<label for="nome">Nome</label>
+									<input type="text" id="nome" name="nome" maxlength="20" required>
+						    </div>
+							<div class="modal-footer">
+								<button type="submit" class="btn btn-primary">Adicionar</button>
+								<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+							</div>
+					    </div>
 					</form>
 					<!-- Mensagem de confirmação de exclusão -->
-					<div id="confirm">
-                        <div class="header"><span>Confirmar</span></div>
-                        <div class="message"></div>
-                        <div class="buttons">
-                            <div class="no simplemodal-close">Nao</div><div class="yes">Sim</div>
-                        </div>
-                    </div>
+					<div id="msgConfirm" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="msgExcluir" aria-hidden="true">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+							<h3 id="msgExcluir">Confirmacao</h3>
+						</div>
+					    <div class="modal-body">
+					    	<p>Voce tem certeza que deseja excluir?</p>
+					    </div>
+						<div class="modal-footer">
+							<button id="bot-yes" class="btn btn-primary">Sim</button>
+							<button class="btn" data-dismiss="modal" aria-hidden="true">Nao</button>		
+						</div>
+				    </div>
 				</div>
 			</div>
 		</div>
@@ -61,4 +81,3 @@
 		msql_close($con);
 	?>
 </html>
-

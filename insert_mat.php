@@ -1,10 +1,10 @@
 <html>
 	<head>
-		<meta http-equiv="refresh" content="10; URL=materias.php">
+		<meta http-equiv="refresh" content="0.0001; URL=materias.php">
 	</head>
 	<body>
 		<?php
-			//Abre a conexão
+			// Abre a conexão
 			$con = require_once "config.php";
 
 			$sql="INSERT INTO Materias (Nome)
@@ -16,8 +16,7 @@
 			  die('Error: ' . mysql_error());
 			}
 			
-			//Insere Nova coluna na Tabela TURMAS, 
-
+			// Insere nova coluna na tabela TURMAS,
 			$sql="ALTER TABLE Turmas ADD " . "$_POST[nome]" . " varchar(30) ";
 			
 			echo "$_POST[nome]";
@@ -26,7 +25,7 @@
 			  die('Error: ' . mysql_error());
 			}
 
-			//Fecha a conexão
+			// Fecha a conexão
 			mysql_close($con);
 		?>
 	</body>
