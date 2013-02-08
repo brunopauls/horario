@@ -1,7 +1,7 @@
 <?php
 	// Para conectar ao banco de dados
 	$bdhost      = "localhost";
-	$bdusuario   = "root";
+	$bdusuario   = "horario";
 	$bdsenha     = "q1w2e3r4";
 	$basededados = "my_db";
 
@@ -13,15 +13,14 @@
 		return $con;
 ?>
 
-
-<?php
+<?php/*
 	// Usado para criar o banco de dados inicial
-/*
-	$con = mysql_connect("localhost","root","q1w2e3r4");
+
+	$con = mysql_connect("localhost","horario","q1w2e3r4");
 	if (!$con){
 			die('Could not connect: ' . mysql_error());
-	}*/
-	/*if (mysql_query("CREATE DATABASE my_db",$con)){
+	}
+	if (mysql_query("CREATE DATABASE my_db",$con)){
 		echo "Database created";
 	}
 	else{

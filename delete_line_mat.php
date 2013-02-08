@@ -11,6 +11,12 @@
 				echo "Error deleting line: " . mysql_error();
 			}
 
+			$sql="ALTER TABLE Turmas DROP COLUMN " . "$_GET[nome]";
+
+			if (!mysql_query($sql,$con)){
+			  die('Error: ' . mysql_error());
+			}
+
 			//Fecha a conexão
 			mysql_close($con);
 		?>
