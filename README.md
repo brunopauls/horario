@@ -1,5 +1,5 @@
 Horário Escolar
-===================
+====================
 
 Sistema gerador de horário escolar.
 
