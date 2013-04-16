@@ -23,6 +23,10 @@ body{
 	width: 100%;
 }
 
+#direita {
+	text-align: right;
+}
+
 #nav {
 	font-family: "Courier New", monospace;
 	padding-top: 1%;
@@ -30,6 +34,7 @@ body{
 
 #nav li {
 	display: inline;
+	text-align: right;
 	padding: 0 1%;
 }
 

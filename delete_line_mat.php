@@ -11,12 +11,14 @@
 				echo "Error deleting line: " . mysql_error();
 			}
 
+			// Suspenso ois não é assim que se faz!
+			/*
 			$sql="ALTER TABLE Turmas DROP COLUMN " . "$_GET[nome]";
-
 			if (!mysql_query($sql,$con)){
 			  die('Error: ' . mysql_error());
 			}
-
+			*/
+			
 			//Fecha a conexão
 			mysql_close($con);
 		?>

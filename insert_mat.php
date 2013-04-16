@@ -17,6 +17,8 @@
 			}
 			
 			// Insere nova coluna na tabela TURMAS,
+			// Suspenso pois não é assim que se faz!
+			/*
 			$sql="ALTER TABLE Turmas ADD " . "$_POST[nome]" . " varchar(30) ";
 			
 			echo "$_POST[nome]";
@@ -24,7 +26,7 @@
 			if (!mysql_query($sql,$con)){
 			  die('Error: ' . mysql_error());
 			}
-
+			*/
 			// Fecha a conexão
 			mysql_close($con);
 		?>
